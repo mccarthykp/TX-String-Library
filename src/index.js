@@ -10,3 +10,12 @@ function capitalize(string) {
   return returnString;
 
 }
+
+/**
+ * Capitalizes the all characters of a string.
+ * @param {string} string
+ * @returns {string} a string with all characters capitalized.
+ */
+function allCaps(string) {
+  return string.toUpperCase();
+}
