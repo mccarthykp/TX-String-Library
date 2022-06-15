@@ -25,7 +25,7 @@ function allCaps(string) {
  * @param {string} string
  * @returns {string} a string with the first character of each word capitalized.
  */
- function capitalizeWords(string) {
+function capitalizeWords(string) {
   let arr = string.split(' ');
   let newString = '';
 
@@ -44,7 +44,7 @@ function allCaps(string) {
  * @param {string} string
  * @returns {string} a string with the first character of each word capitalized, less the exceptions, unless it is the first word.
  */
- function capitalizeHeadline(string) {
+function capitalizeHeadline(string) {
   let arr = string.split(' ');
   let newString = '';
   let exceptList = ['the', 'in', 'a', 'an', 'and', 'but', 'for', 'at', 'by', 'from', 'of', 'is'];
@@ -65,7 +65,7 @@ function allCaps(string) {
  * @param {string} string
  * @returns {string} a string with all extra spaces removed.
  */
- function removeExtraSpaces(string) {
+function removeExtraSpaces(string) {
   let newString = string.trim();
   let arr = newString.split(' ');
   let newArr = [];
@@ -79,4 +79,23 @@ function allCaps(string) {
   }
   let returnString = newArr.join('')
   return returnString;
- }
+}
+
+/**
+ * Removes extra spaces, replaces spaces with a hyphen "-" and makes all characters lowercase.
+ * @param {string} string
+ * @returns {string} a lowercase string with all extra spaces removed, and spaces replaced with a hyphen.
+ */
+function kebobCase(string) {
+  let newString = removeExtraSpaces(string)
+  newString.toLowerCase();
+  let arr = newString.split(' ');
+  let returnString = '';
+
+  returnString += arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    returnString += '-' + arr[i];
+  }
+
+  return returnString;
+}
