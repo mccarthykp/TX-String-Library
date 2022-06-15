@@ -59,3 +59,24 @@ function allCaps(string) {
   }
   return newString;
 }
+
+/**
+ * Removes all spaces in the beginning and end of a string, along with any extra spaces in the middle of a string. If more than one space is in a string, they are replaced with a single space.
+ * @param {string} string
+ * @returns {string} a string with all extra spaces removed.
+ */
+ function removeExtraSpaces(string) {
+  let newString = string.trim();
+  let arr = newString.split(' ');
+  let newArr = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] != '' && i != arr.length - 1) {
+      newArr.push(arr[i] + ' ');
+    } else {
+      newArr.push(arr[i]);
+    }
+  }
+  let returnString = newArr.join('')
+  return returnString;
+ }
